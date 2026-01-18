@@ -1,0 +1,973 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("images/2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #000; 
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+   
+    box-shadow: 0 2px 5px rgba(27, 4, 118, 0.5);
+    position: relative;
+}
+
+/* Logo */
+
+
+/* Menu principal */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    color: #1b0476; /* couleur pleine, pas de transparence */
+    font-weight: 600;
+    text-decoration: none;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* plus léger et net */
+}
+
+/* Menu principal */
+.navbar a {
+    color: #1b0476; /* couleur pleine */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2); /* moins flou */
+}
+
+
+.navbar a:hover {
+    color: #fff;
+    background-color: #8a8d4a; /* survol doré */
+}
+
+/* Lien actif */
+.navbar a.active {
+    color: #f5f5f5; /* légèrement différent du blanc pour contraste */
+    font-weight: 600;
+}
+
+/* Menu déroulant */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff; /* blanc pour le dropdown */
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(27, 4, 118, 0.2);
+    border-radius: 5px;
+    display: none;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #02163a; /* texte sombre pour lisibilité */
+    text-shadow: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #8a8d4a; /* survol doré */
+    color: #fff; /* texte blanc sur survol */
+}
+
+.dropdown-content li:last-child a {
+    border-bottom: none;
+}
+
+.home {
+    background-size: cover;
+    display: flex;
+    padding: 150px 80px;
+    margin: 40px auto;
+}
+
+.home-container {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.home-content {
+    max-width: 800px;
+    margin-right: 80px;
+    margin-top: 30px;
+}
+
+.home-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #1b0476;
+    font-style:italic;
+    margin-bottom: 15px;
+}
+
+.home-content h2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #8a8d4a;
+    font-style:italic;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    color: #1b0476;
+    font-style: 'Georgia',serif;
+}
+
+.home-sci a {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+.home-sci a img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-img {
+    width: 2000px; 
+    height: 400px;
+    margin-left: 80px; 
+    margin-top: 30px;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #ffffff; 
+    box-shadow: 0 0 10px #fff; 
+}
+
+/* Styles pour la page Parcours */
+.Parcours-content {
+    max-width: 1300px;
+    margin: 60px auto 30px auto;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.Parcours-content h1 {
+    font-size: 42px;
+    font-style: italic;
+    font-weight: 700;
+    color: #1b0476;
+    text-align: center;
+    margin: 0 0 60px 0;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #8a8d4a;
+}
+
+.Parcours-content h2 {
+    font-size: 22px;
+    background: #1b0476;
+    color: #ffffff;
+    border-radius: 30px;
+    margin: 40px 0 15px 0;
+    padding: 15px 35px;
+    display: inline-block;
+}
+
+.Parcours-content p {
+    font-size: 20px;
+    line-height: 24px;
+    background-color: #f8fbfc;
+    border-left: 4px solid #8a8d4a;
+    border-radius: 8px;
+    margin: 15px 0 30px 30px;
+    padding: 25px 30px;
+    color: #333;
+}
+
+.diplomes {
+    max-width: 1300px;
+    margin: 0 auto 50px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 5px 15px rgb(3, 54, 81);
+    
+}
+
+.diplomes h1 {
+    font-size: 50px;
+    font-style: italic;
+    font-weight: 700;
+    color: #1b0476;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    position: relative;
+    
+}
+
+.diplomes table {
+    width: 100%;
+    
+    
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.diplomes tr {
+    background-color: #f8fbfc;
+}
+
+.diplomes tr:hover {
+    background-color: #eeeeee;
+}
+
+.diplomes td{
+    font-size: 30px;
+    font-weight: normal;
+    color: #1b0476;
+    text-align: center;
+    width: 40%;
+    padding: 25px;
+}
+
+.diplomes img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid #ffffff;
+    margin: 10px;
+}
+
+.diplomes img:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-color: #8a8d4a;
+}
+
+
+.competences {
+    padding: 50px 50px;
+    text-align: center;
+    
+}
+
+.competences-title {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #1b0476;
+    font-style: italic;
+   
+}
+
+/* Competences Table */
+.competences-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-spacing: 20px 20px;
+    padding: 20px;
+}
+
+/* Categories */
+.competence-category {
+    width: 48%;
+    display: inline-block;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.category-header {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.category-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.category-header h2 {
+    font-size: 24px;
+    color: #1b0476;
+}
+
+/* Skills */
+.skill-name {
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.skill-bar-container {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #b4cfa3;
+    border-radius: 10px;
+}
+
+.skill-90 { width: 90%; }
+.skill-85 { width: 85%; }
+.skill-80 { width: 80%; }
+.skill-75 { width: 75%; }
+.skill-70 { width: 70%; }
+.skill-65 { width: 65%; }
+
+
+.skill-empty {
+    height: 100%;
+    background-color: transparent;
+}
+
+
+.stages {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+
+    padding: 30px;
+
+    font-family: arial;
+    background-color: #ffffff;
+    border-radius:10px ;
+  
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+}
+
+
+.stages-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    color: #1b0476;
+
+    text-decoration: none;
+
+    padding: 20px;
+    border-bottom: 3px solid #8a8d4a ;
+
+    margin-bottom: 40px;
+}
+
+
+.timeline {
+    background-color: #e9f5ed;
+    border-radius:10px ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.timeline-item {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    background-color: #ffffff;
+    border-radius:10px ;
+    border-left: 5px solid #8a8d4a;
+    border-top: 2px solid #cccccc;
+    border-right: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+
+    padding: 20px;
+}
+
+
+.timeline-item table {
+    width: 100%;
+}
+
+
+.timeline-img {
+    padding-right: 20px;
+}
+
+.timeline-img img {
+    width: 120px;
+    height: 120px;
+
+    border: 2px solid #1b0476;
+    background-color: #ffffff;
+    border-radius:10px ;
+    border-radius: 50%;
+}
+
+.timeline-content time {
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1b0476;
+}
+
+.timeline-content h2 {
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8a8d4a;
+
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-family: arial;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333333;
+
+    text-align: left;
+    text-indent: 20px;
+
+    background-color: #fff;
+    padding: 15px;
+    border-radius:10px ;
+    border-top: 2px solid #1b0476;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+
+.events-container {
+    width: 85%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+    
+    padding: 30px;
+    
+    background-color: #f7f7ff;
+    border: 3px solid #ccccff;
+    border-radius: 20px;
+}
+
+
+.events-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    color: #1b0476;
+
+    text-decoration: none;
+
+    padding: 20px;
+    
+    border-bottom: 3px solid #8a8d4a;
+    margin-bottom: 40px;
+}
+
+
+.event-block {
+    background-color: #ffffff;
+    border: 2px solid #dddddd;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+
+.events-h1 {
+    font: bold 1.5em sans-serif;
+    color: #8a8d4a;
+    text-align: left;
+    
+    
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 10px;
+    
+    background-color: #f0f0f0;
+    border-left: 5px solid #8a8d4a;
+}
+
+
+.events-p {
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 1.1em;
+    color: #222222;
+    text-indent: 30px;
+    
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+
+.events-strong {
+    font-weight: bold;
+    font-style: italic;
+    color: #b30059;
+    text-decoration: underline;
+}
+
+
+.events-img {
+    width: 55%;
+    height: auto;
+    border: 2px solid #8a8d4a;
+    
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    
+    display: block;
+    box-shadow: 0 2px 5px #8a8d4a;
+    
+}
+
+
+.events-img-first {
+    border-color: #8a8d4a;
+    border-width: 2px;
+}
+
+
+
+.matieres-main {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.matieres-main h1 {
+    font-size: 40px;
+    color: #1b0476;
+    margin-bottom: 40px;
+}
+
+
+
+.circles-container {
+    text-align: center; 
+}
+
+
+.circle {
+    display: inline-block;
+
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+
+    background-color: #8a8d4a;
+    color: white;
+    border-radius: 50%;
+
+    text-align: center;
+    padding-top: 70px;   
+    box-sizing: border-box;
+}
+
+
+.circle h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.circle p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.circle:hover {
+ 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+
+.projects-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.project-card {
+    display: inline-block;
+    width: 350px;
+    margin: 15px;
+    padding: 25px;
+    background-color: #1b0476;
+    color: white;
+    border-radius: 20px;
+    text-align: left;
+    vertical-align: top;
+    
+}
+
+.project-card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.project-card:hover {
+ 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+.passions-main {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.passions-main h1 {
+    font-size: 40px;
+    color: #1b0476;
+    margin-bottom: 50px;
+}
+
+
+.section-container {
+    margin-bottom: 50px;
+}
+
+.section-container h2 {
+    font-size: 32px;
+    color: #8a8d4a;
+    margin-bottom: 30px;
+}
+
+
+.cards-container {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    vertical-align: top;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+   
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 22px;
+    color: #1b0476;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.card:hover {
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+.qualities {
+    display: inline-block;
+    text-align: center;
+}
+
+.quality {
+    display: inline-block;
+    background-color: #8a8d4a;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 25px;
+   
+}
+
+.quality:hover {
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.contact-main {
+    max-width: 600px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.contact-main h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1b0476;
+}
+
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+
+
+
+.contact-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #1b0476;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #8a8d4a;
+}
+
+.contact-form .reset {
+    background-color: #999;
+}
+
+.contact-form .reset:hover {
+    background-color: #666;
+}
+
+
+.temoignage-main {
+    max-width: 900px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.temoignage-main h1 {
+    text-align: center;
+    color: #1b0476;
+    margin-bottom: 30px;
+}
+
+
+.intro p {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+
+.temoignage-box h2 {
+    color: #8a8d4a;
+    margin-bottom: 20px;
+}
+
+.temoignage-box p {
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+/* Conteneur du quiz */
+.quiz-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #1b0476;
+    margin: 20px 0;
+}
+
+.quiz-main {
+    padding: 50px 15px;
+    display: flex;
+    justify-content: center; /* centre le quiz horizontalement */
+}
+
+.quiz-main .quiz-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Titre du quiz */
+.quiz-main header h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1b0476;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Chaque question */
+.quiz-main .quiz-question {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-left: 4px solid #1b0476;
+    background-color: #f8f8ff;
+    border-radius: 10px;
+}
+
+/* Bouton centré */
+.quiz-main button {
+    display: block;
+    margin: 30px auto 0 auto; /* centre horizontalement */
+    background-color: #1b0476;
+    color: white;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-main button:hover {
+    background-color: #8a8d4a;
+    transform: scale(1.05);
+}
+
+/* Résultat */
+.quiz-main #resultat {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f8ff;
+    border: 2px solid #1b0476;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.quiz-main #resultat h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #1b0476;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Texte des corrections */
+.quiz-main #resultat p {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 251, 251, 0.9);
+    color: #010000;
+    margin-top: 50px;
+    font-size: 14px;
+   
+
+}

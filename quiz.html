@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Informatique</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">Mon Site</a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+
+            <!-- Menu déroulant "Mon Parcours" -->
+            <li class="dropdown">
+                <a href="#">Mon Parcours ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="parcours.html">Parcours</a></li>
+                    <li><a href="Stages & Expériences.html">Stages</a></li>
+                    <li><a href="projet.html">Projets</a></li>
+                </ul>
+            </li>
+            <li><a href="event.html">Événements</a></li>
+            <li><a href="passions.html">Passions</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+            <li><a href="temoignage.html">Témoignage</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+    
+<h1 class="quiz-title">Quiz : Bases de l’Informatique</h1>
+
+<main class="quiz-main">
+    <article class="quiz-container">
+        <form name="quizForm">
+
+            <!-- Question 1 -->
+            <section class="quiz-question">
+                <p>1. HTML est :</p>
+                <label><input type="radio" name="q1" value="a"> Un langage de balisage</label><br>
+                <label><input type="radio" name="q1" value="b"> Un système d'exploitation</label><br>
+                <label><input type="radio" name="q1" value="c"> Un compilateur</label>
+            </section>
+
+            <!-- Question 2 -->
+            <section class="quiz-question">
+                <p>2. CSS sert à :</p>
+                <label><input type="radio" name="q2" value="a"> Structurer la page</label><br>
+                <label><input type="radio" name="q2" value="b"> Styliser la page</label><br>
+                <label><input type="radio" name="q2" value="c"> Gérer la base de données</label>
+            </section>
+
+            <!-- Question 3 -->
+            <section class="quiz-question">
+                <p>3. JavaScript est exécuté :</p>
+                <label><input type="radio" name="q3" value="a"> Sur le serveur</label><br>
+                <label><input type="radio" name="q3" value="b"> Dans le navigateur</label><br>
+                <label><input type="radio" name="q3" value="c"> Dans le BIOS</label>
+            </section>
+
+            <!-- Question 4 -->
+            <section class="quiz-question">
+                <p>4. Quelle balise permet d'afficher une image ?</p>
+                <label><input type="radio" name="q4" value="a"> &lt;img&gt;</label><br>
+                <label><input type="radio" name="q4" value="b"> &lt;image&gt;</label><br>
+                <label><input type="radio" name="q4" value="c"> &lt;picture&gt;</label>
+            </section>
+
+            <!-- Question 5 -->
+            <section class="quiz-question">
+                <p>5. La balise &lt;a&gt; sert à :</p>
+                <label><input type="radio" name="q5" value="a"> Créer un lien hypertexte</label><br>
+                <label><input type="radio" name="q5" value="b"> Créer un paragraphe</label><br>
+                <label><input type="radio" name="q5" value="c"> Afficher une image</label>
+            </section>
+
+            <!-- Question 6 -->
+            <section class="quiz-question">
+                <p>6. La couleur du texte en CSS se définit avec :</p>
+                <label><input type="radio" name="q6" value="a"> background-color</label><br>
+                <label><input type="radio" name="q6" value="b"> color</label><br>
+                <label><input type="radio" name="q6" value="c"> font-size</label>
+            </section>
+
+            <!-- Question 7 -->
+            <section class="quiz-question">
+                <p>7. Quelle balise HTML définit le titre de la page ?</p>
+                <label><input type="radio" name="q7" value="a"> &lt;title&gt;</label><br>
+                <label><input type="radio" name="q7" value="b"> &lt;h1&gt;</label><br>
+                <label><input type="radio" name="q7" value="c"> &lt;head&gt;</label>
+            </section>
+
+            <!-- Question 8 -->
+            <section class="quiz-question">
+                <p>8. Comment inclure un fichier CSS externe ?</p>
+                <label><input type="radio" name="q8" value="a"> &lt;script src="style.css"&gt;</label><br>
+                <label><input type="radio" name="q8" value="b"> &lt;link rel="stylesheet" href="style.css"&gt;</label><br>
+                <label><input type="radio" name="q8" value="c"> &lt;css&gt;</label>
+            </section>
+
+            <!-- Question 9 -->
+            <section class="quiz-question">
+                <p>9. JavaScript permet de :</p>
+                <label><input type="radio" name="q9" value="a"> Styliser la page</label><br>
+                <label><input type="radio" name="q9" value="b"> Ajouter de l'interactivité</label><br>
+                <label><input type="radio" name="q9" value="c"> Gérer la base de données</label>
+            </section>
+
+            <!-- Question 10 -->
+            <section class="quiz-question">
+                <p>10. Quelle extension correspond à une page web ?</p>
+                <label><input type="radio" name="q10" value="a"> .html</label><br>
+                <label><input type="radio" name="q10" value="b"> .exe</label><br>
+                <label><input type="radio" name="q10" value="c"> .doc</label>
+            </section>
+
+            <button type="button" onclick="corrigerQuiz()">Valider</button>
+        </form>
+
+        <section id="resultat"></section>
+    </article>
+</main>
+
+<script>
+function corrigerQuiz() {
+    let score = 0;
+    let form = document.forms["quizForm"];
+    let questions = 10;
+
+    const bonnesReponses = {
+        q1: "Un langage de balisage",
+        q2: "Styliser la page",
+        q3: "Dans le navigateur",
+        q4: "&lt;img&gt;",
+        q5: "Créer un lien hypertexte",
+        q6: "color",
+        q7: "&lt;title&gt;",
+        q8: "&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;",
+        q9: "Ajouter de l'interactivité",
+        q10: ".html"
+    };
+
+
+    const valeursCorrectes = {
+        q1: "a",
+        q2: "b",
+        q3: "b",
+        q4: "a",
+        q5: "a",
+        q6: "b",
+        q7: "a",
+        q8: "b",
+        q9: "b",
+        q10: "a"
+    };
+
+    /* Vérifier que toutes les questions sont répondues */
+    for (let i = 1; i <= questions; i++) {
+        if (!form["q" + i].value) {
+            alert("Veuillez répondre à toutes les questions !");
+            return;
+        }
+    }
+
+    /* Calcul du score */
+    for (let i = 1; i <= questions; i++) {
+        if (form["q" + i].value === valeursCorrectes["q" + i]) {
+            score++;
+        }
+    }
+
+    /* Affichage du résultat */
+    let affichage = "<h2>Votre score : " + score + " / " + questions + "</h2>";
+    affichage += "<h3>Les réponses correctes :</h3><ol>";
+
+    for (let i = 1; i <= questions; i++) {
+        affichage += "<li>" + bonnesReponses["q" + i] + "</li>";
+    }
+
+    affichage += "</ol>";
+
+    document.getElementById("resultat").innerHTML = affichage;
+}
+</script>
+<footer>
+    <p> 2025 - Mon Site Web Personnel</p>
+</footer>
+
+</body>
+</html>
