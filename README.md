@@ -15,7 +15,7 @@ Développement d’un site web personnel type portfolio pour présenter mon parc
 │-- parcours.html
 │-- competences.html
 │-- projets.html
-│-- stages.html
+│-- stages & Expériences.html
 │-- evenements.html
 │-- passions.html
 │-- temoignage.html
